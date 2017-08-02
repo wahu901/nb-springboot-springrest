@@ -48,6 +48,11 @@ public class CustomerRestController {
         return this.customerRepository.findOne(id);
     }
     
+    @RequestMapping("/name/{name}")
+    public Object get(@PathVariable String name) {
+        return this.customerRepository.findByName(name);
+    }
+    
     @RequestMapping(value = "/{id}", method = PUT)
     public ResponseEntity<?> put(@PathVariable Integer id, @RequestBody Object input) {
         return null;
